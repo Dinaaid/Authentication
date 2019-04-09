@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class AppComponent {
-  title = 'loginAuth';
+export class LoginComponent implements OnInit {
 
   constructor(public afAuth: AngularFireAuth){
   }
@@ -19,4 +18,8 @@ export class AppComponent {
   logout() {
     this.afAuth.auth.signOut();
   }
+
+  ngOnInit() {
+  }
+
 }
